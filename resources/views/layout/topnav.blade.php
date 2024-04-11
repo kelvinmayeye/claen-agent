@@ -7,7 +7,7 @@
         <div class="navbar-brand">
             <!-- Logo icon -->
             <a href="">
-                <img src="{{asset('assets/images/freedashDark.svg')}}" alt="" class="img-fluid">
+                <img src="{{asset('assets/images/big/logo2.png')}}" alt="" class="img-fluid" style="height: 60px;width: auto;">
             </a>
         </div>
         <a class="topbartoggler d-block d-lg-none waves-effect waves-light" href="javascript:void(0)"

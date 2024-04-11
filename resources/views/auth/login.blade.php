@@ -30,7 +30,7 @@
             <div class="col-lg-5 col-md-7 bg-white">
                 <div class="p-3">
                     <div class="text-center">
-                        <img src="{{asset('assets/images/big/icon.png')}}" alt="wrapkit">
+                        <img src="{{asset('assets/images/big/logo2.png')}}" style="height: 60px; width: auto;" alt="wrapkit">
                     </div>
                     <h2 class="mt-3 text-center">Login</h2>
                     <p class="text-center">Welcome to Cleaning Agent Connect, enter your credentials to continue.</p>
