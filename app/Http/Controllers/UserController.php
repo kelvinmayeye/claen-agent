@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
     public function getRegisterPage(){
-        return view();
+        return view('auth.register');
     }
     public function register(Request $request){
         $validator = Validator::make($request->all(), [
@@ -25,12 +26,12 @@ class UserController extends Controller
         ]);
         $user = $request->except('_token', 'password_confirmation');
         if ($validator->fails()) {
-//            Alert::error('Error', 'Password didnt match');
-            return back()->with('error','password didnt match');
+           Alert::info('Error', 'We are currently working on this feature');
+            return back();
         }
 
         if (User::create($user)) {
-//            Alert::success('Register Successfully', 'Please login to continue');
+            Alert::success('Register Successfully', 'Please login to continue');
             return redirect()->route('login');
 
         }

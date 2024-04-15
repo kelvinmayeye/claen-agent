@@ -34,6 +34,7 @@
 
 
     <div class="page-wrapper">
+        @include('sweetalert::alert')
         @yield('content')
         <footer class="footer text-center text-muted">
             All Rights Reserved by Mzumbe. © 2024
