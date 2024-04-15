@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone_number',16)->unique();
             $table->string('password');
-//            $table->timestamps();
+           $table->timestamps();
         });
     }
 
