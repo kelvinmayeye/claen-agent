@@ -82,7 +82,7 @@
                                 <label class="form-label text-dark">Date of birth <span
                                         class="text-danger">*</span></label>
                                 <input class="form-control" name="dob" id="" type="date"
-                                       placeholder="date of birth" max="2010-01-01" min="1990-01-01" required>
+                                       placeholder="date of birth" max="{{now()->format('Y-m-d')}}" min="1990-01-01" required>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -119,7 +119,7 @@
                                 <label class="form-label text-dark">Phone number <span
                                         class="text-danger">*</span></label>
                                 <input class="form-control" name="phone_number" id="" type="text"
-                                       placeholder="0782001345" required>
+                                       placeholder="0782001345" maxlength="10" required>
                             </div>
                         </div>
                     </div>

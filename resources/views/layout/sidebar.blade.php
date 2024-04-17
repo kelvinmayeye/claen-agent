@@ -12,6 +12,14 @@
                 <li class="list-divider"></li>
                 <li class="nav-small-cap"><span class="hide-menu">Applications</span></li>
 
+                @if(auth()->user()->role == 'customer')
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{route('service.offerred')}}" aria-expanded="false">
+                            <i data-feather="tag" class="feather-icon">
+                            </i><span class="hide-menu">Services Offered </span></a>
+                    </li>
+                @endif
+
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="#bookings" aria-expanded="false">
                         <i data-feather="tag" class="feather-icon">
@@ -36,8 +44,8 @@
                         <span class="hide-menu">Services </span>
                     </a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                        <li class="sidebar-item"><a href="#services" class="sidebar-link">
-                                <span class="hide-menu"> Add Services </span></a>
+                        <li class="sidebar-item"><a href="{{route('services')}}" class="sidebar-link">
+                                <span class="hide-menu">Services </span></a>
                         </li>
                     </ul>
                 </li>

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('customer_id')->references('id')->on('users');
             $table->foreignId('agent_id')->references('id')->on('users');
             $table->enum('status',['open','done'])->default('done');
-//            $table->timestamps();
+            $table->timestamps();
         });
     }
 
