@@ -44,9 +44,16 @@
                         <span class="hide-menu">Services </span>
                     </a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                        <li class="sidebar-item"><a href="{{route('services')}}" class="sidebar-link">
-                                <span class="hide-menu">Services </span></a>
-                        </li>
+                        @if(auth()->user()->role == 'agent')
+                            <li class="sidebar-item"><a href="{{route('agent.get.services')}}" class="sidebar-link">
+                                    <span class="hide-menu">Agent Services </span></a>
+                            </li>
+                        @endif
+                        @if(auth()->user()->role == 'admin')
+                                <li class="sidebar-item"><a href="{{route('services')}}" class="sidebar-link">
+                                        <span class="hide-menu">Services </span></a>
+                                </li>
+                        @endif
                     </ul>
                 </li>
 

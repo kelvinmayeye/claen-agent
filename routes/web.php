@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
@@ -29,5 +30,9 @@ Route::get('services',[ServiceController::class,'index'])->name('services');
 Route::post('services/store',[ServiceController::class,'store'])->name('services.store');
 
 //customer s
-Route::get('services/customer',[ServiceController::class,'serviceOfferred'])->name('service.offerred');
+Route::get('services/customer',[ServiceController::class,'serviceOffered'])->name('service.offered');
+
+//agent
+Route::get('services/agent',[AgentController::class,'getAgentServices'])->name('agent.get.services');
+Route::get('services/agent/add',[AgentController::class,'storeAgentServices'])->name('agent.add.services');
 });

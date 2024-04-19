@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AgentService;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use function Termwind\renderUsing;
 
@@ -27,8 +28,13 @@ class ServiceController extends Controller
         return back();
     }
 
-    public function serviceOfferred(){
+    public function serviceOffered(){
         $services = AgentService::all();
         return view('pages.customers.service-offered',compact('services'));
+    }
+
+    public function agentServices(){
+        $services = AgentService::where('agent_id',Auth::id())->get();
+        return view('pages.agents.agent-services',compact('services'));
     }
 }

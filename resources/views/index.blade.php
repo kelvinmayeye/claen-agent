@@ -8,6 +8,7 @@
     <link href="{{asset('assets/extra-libs/c3/c3.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/libs/chartist/dist/chartist.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="{{asset('dist/css/style.min.css')}}" rel="stylesheet">
 
@@ -15,12 +16,12 @@
 
 <body>
 
-<div class="preloader">
-    <div class="lds-ripple">
-        <div class="lds-pos"></div>
-        <div class="lds-pos"></div>
-    </div>
-</div>
+{{--<div class="preloader">--}}
+{{--    <div class="lds-ripple">--}}
+{{--        <div class="lds-pos"></div>--}}
+{{--        <div class="lds-pos"></div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
      data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
@@ -57,10 +58,11 @@
 <script src="{{asset('assets/extra-libs/c3/d3.min.js')}}"></script>
 <script src="{{asset('assets/extra-libs/c3/c3.min.js')}}"></script>
 <script src="{{asset('assets/libs/chartist/dist/chartist.min.js')}}"></script>
-<script src="{{asset('assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')}}"></script>
+{{--<script src="{{asset('assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')}}"></script>--}}
 <script src="{{asset('assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js')}}"></script>
 <script src="{{asset('assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js')}}"></script>
-<script src="{{asset('dist/js/pages/dashboards/dashboard1.min.js')}}"></script>
+{{--<script src="{{asset('dist/js/pages/dashboards/dashboard1.min.js')}}"></script>--}}
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </body>
-
+@yield('script')
 </html>
