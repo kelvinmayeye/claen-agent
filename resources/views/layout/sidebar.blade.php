@@ -14,7 +14,7 @@
 
                 @if(auth()->user()->role == 'customer')
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{route('service.offerred')}}" aria-expanded="false">
+                        <a class="sidebar-link" href="{{route('service.offered')}}" aria-expanded="false">
                             <i data-feather="tag" class="feather-icon">
                             </i><span class="hide-menu">Services Offered </span></a>
                     </li>

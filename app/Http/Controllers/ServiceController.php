@@ -22,7 +22,7 @@ class ServiceController extends Controller
             Service::create($service);
         }catch (\Exception $e){
             throw $e;
-            return back()->with('error','service added successfuly');
+            return back()->with('error','failed to add service');
         }
         Alert::success('Service Added', 'Service were added successful');
         return back();
