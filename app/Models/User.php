@@ -42,4 +42,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function getFullnameAttribute()
+    {
+        return $this->attributes['first_name'] . ' ' . $this->attributes['middle_name'] . ' ' . $this->attributes['last_name'];
+    }
+
+    public function getAgeAttribute()
+    {
+        $dob = $this->attributes['dob'];
+        $today = date('Y-m-d');
+        $diff = date_diff(date_create($dob), date_create($today));
+        return $diff->y;
+    }
 }

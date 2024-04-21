@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('agent_id')->references('id')->on('users');
             $table->foreignId('service_id')->references('id')->on('services');
             $table->text('description')->nullable();
+            $table->enum('status',['active','inactive'])->default('active');
             $table->timestamps();
         });
     }
