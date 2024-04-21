@@ -27,7 +27,7 @@
                                     <tr>
                                         <td>{{$key+1}}</td>
                                         <td>{{$s->name}}</td>
-                                        <td>{{$s->description}}</td>
+                                        <td>{{ \Illuminate\Support\Str::words($s->description, 6, '...') }}</td>
                                         <td>{{''}}</td>
                                         <td>{{''}}</td>
                                         <td>Status</td>
