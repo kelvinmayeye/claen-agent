@@ -35,4 +35,12 @@ class BookingController extends Controller
         }
         return back();
     }
+
+    public function customerBookings(){
+        $bookings = Bookings::where('customer_id',Auth::id())->get();
+        if ($bookings->count() == 0){
+            Alert::toast('"You don\'t currently have a booking."');
+        }
+        return view('pages.customers.customer-bookings',compact('bookings'));
+    }
 }

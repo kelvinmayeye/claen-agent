@@ -18,6 +18,12 @@
                             <i data-feather="tag" class="feather-icon">
                             </i><span class="hide-menu">Services Offered </span></a>
                     </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{route('customer.bookings')}}" aria-expanded="false">
+                            <i class="fa fa-box-open">
+                            </i><span class="hide-menu">My Bookings </span></a>
+                    </li>
                 @endif
 
                 @if(auth()->user()->role == 'agent')
