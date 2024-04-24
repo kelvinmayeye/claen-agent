@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,7 @@ Route::post('services/store',[ServiceController::class,'store'])->name('services
 
 //customer s
 Route::get('services/customer',[ServiceController::class,'serviceOffered'])->name('service.offered');
+Route::post('customer/add/booking',[BookingController::class,'addBooking'])->name('add.booking');
 
 //agent -serives
 Route::get('services/agent',[AgentController::class,'getAgentServices'])->name('agent.get.services');

@@ -37,4 +37,6 @@ class ServiceController extends Controller
         $services = AgentService::where('agent_id',Auth::id())->get();
         return view('pages.agents.agent-services',compact('services'));
     }
+
+
 }

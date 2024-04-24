@@ -15,8 +15,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('customer_id')->references('id')->on('users');
             $table->foreignId('agent_id')->references('id')->on('users');
+            $table->date('date');
+            $table->time('time');
+            $table->string('place');
+            $table->text('description')->nullable();
             $table->enum('status',['open','done'])->default('done');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

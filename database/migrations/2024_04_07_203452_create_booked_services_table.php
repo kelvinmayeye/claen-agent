@@ -16,10 +16,10 @@ return new class extends Migration
             $table->foreignId('booking_id')->references('id')->on('bookings');
             $table->foreignId('agent_service_id')->references('id')->on('agent_services');
             $table->enum('status',['pending','attended','canceled'])->default('pending');
-            $table->integer('created_by');
-            $table->integer('attended_by');
-            $table->integer('cancelled_by');
+            $table->integer('attended_by')->nullable();
+            $table->integer('cancelled_by')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
