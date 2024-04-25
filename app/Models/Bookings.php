@@ -21,8 +21,8 @@ class Bookings extends Model
             ->join('services as s','as.service_id','=','s.id')
             ->join('users as agents','as.agent_id','=','agents.id')
             ->join('users as customers','b.customer_id','=','customers.id')
-            ->select(['b.*','bs.*','s.name as service_name','customers.sex','customers.phone_number as customer_phone',
-                'agents.phone_number as agent_phone'])
+            ->select(['b.*','s.name as service_name','customers.sex','customers.phone_number as customer_phone',
+                'agents.phone_number as agent_phone','b.status as booking_status'])
             ->selectRaw('CONCAT(agents.first_name, ", ", agents.last_name) as agent_name')
             ->selectRaw('CONCAT(customers.first_name, ", ", customers.last_name) as customer_name');
     }

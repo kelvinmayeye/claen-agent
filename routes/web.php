@@ -45,6 +45,7 @@ Route::get('services/agent/add',[AgentController::class,'storeAgentServices'])->
 Route::get('services/agent/details/{id}',[AgentController::class,'agentServiceDetails'])->name('agent.service.details');
 Route::get('services/agent/status/{id}',[AgentController::class,'changeStatus'])->name('agent.service.change.status');
 Route::get('services/agent/delete/{id}',[AgentController::class,'deleteAgentService'])->name('agent.service.delete');
+Route::get('services/agent/bookings',[AgentController::class,'agentServiceBookings'])->name('agent.service.bookings');
 Route::post('services/agent/update',[AgentController::class,'saveAgentServiceUpdate'])->name('agent.service.update');
 
 //admin and agents

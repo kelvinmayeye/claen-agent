@@ -34,7 +34,7 @@
 
                 @if(auth()->user()->role == 'agent')
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="#bookings" aria-expanded="false">
+                        <a class="sidebar-link" href="{{route('agent.service.bookings')}}" aria-expanded="false">
                             <i data-feather="tag" class="feather-icon">
                             </i><span class="hide-menu">Bookings </span></a>
                     </li>

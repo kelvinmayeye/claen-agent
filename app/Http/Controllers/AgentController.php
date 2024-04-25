@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AgentService;
+use App\Models\Bookings;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -65,6 +66,10 @@ class AgentController extends Controller
             Alert::toast('Service not found');
             return back();
         }
+        if ($agentService->bookings->where('status', 'pending')->isNotEmpty()) {
+            Alert::error('Action Denied','You cant Change status you have a pending booking');
+            return back();
+        }
         if($agentService->status == 'active'){
             $agentService->update([
                 'status'=>'inactive'
@@ -104,6 +109,11 @@ class AgentController extends Controller
         // If deletion fails for any reason
         Alert::toast('Failed to delete service');
         return back();
+    }
+
+    public function agentServiceBookings(){
+        $bookings = Bookings::list()->where('b.agent_id',Auth::id())->get();
+        return view('pages.agents.agents-bookings',compact('bookings'));
     }
 
 }
