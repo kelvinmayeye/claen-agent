@@ -37,7 +37,7 @@ class BookingController extends Controller
     }
 
     public function customerBookings(){
-        $bookings = Bookings::where('customer_id',Auth::id())->get();
+        $bookings = Bookings::list()->where('b.customer_id',Auth::id())->get();
         if ($bookings->count() == 0){
             Alert::toast('"You don\'t currently have a booking."');
         }

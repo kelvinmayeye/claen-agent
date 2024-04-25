@@ -16,9 +16,9 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Service Name</th>
-                                    <th>Description</th>
-                                    <th>Agents</th>
+                                    <th>Agent</th>
                                     <th>Phone number</th>
+                                    <th>Booked At</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -27,12 +27,13 @@
                                 @foreach($bookings as $key=>$b)
                                     <tr>
                                         <td>{{$key+1}}</td>
-                                        <td>{{$b->bookedServices}}</td>
-                                        <td>{{$b->description}}</td>
-                                        <td>{{''}}</td>
-                                        <td>{{''}}</td>
+                                        <td>{{$b->service_name}}</td>
+                                        <td>{{$b->agent_name}}</td>
+                                        <td>{{$b->agent_phone}}</td>
+                                        <td>{{ \Carbon\Carbon::parse($b->created_at)->diffForHumans() }}</td>
+                                        <td>{{$b->status}}</td>
                                         <td style="text-align: center;">
-                                            <div class="btn-group dropright">
+                                            <div class="btn-group dropdown-menu-right">
                                                 <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
                                                         data-bs-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false">
@@ -40,7 +41,7 @@
                                                 </button>
                                                 <div class="dropdown-menu">
                                                     <a class="dropdown-item text-primary" href="javascript:void(0)"><i
-                                                            class="fa fa-eye"></i> More details </a>
+                                                            class="fa fa-circle"></i> Change Service </a>
                                                     <a class="dropdown-item text-danger">
                                                         <i class="fa fa-bookmark"></i> Cancel</a>
                                                 </div>
