@@ -27,10 +27,12 @@ class AgentController extends Controller
                     'agent_id'=>\Auth::id(),
                     'service_id'=>$service->id,
                 ]);
+                Alert::toast('Service added successful');
+                 $result = ['status'=>'success','msg'=>'Service added successful','data'=>$agentService];
             }else{
-                return response()->json(['status'=>'success','msg'=>'Service already existing']);
+                Alert::toast('Service already existing');
+                $result =['status'=>'success','msg'=>'Service already existing'];
             }
-            $result = ['status'=>'success','msg'=>'Service added successful','data'=>$agentService];
         }else{
             $result = ['status'=>'error','msg'=>'Service was not found'];
 

@@ -3,6 +3,7 @@
     <div class="scroll-sidebar" data-sidebarbg="skin6">
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
+            <span class="ps-4"><small>{{auth()->user()->role}}</small></span>
             <ul id="sidebarnav">
                 <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="{{url('home')}}" aria-expanded="false">

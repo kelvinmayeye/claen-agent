@@ -21,7 +21,6 @@
                                     <th>Fullname</th>
                                     <th>Sex</th>
                                     <th>Age</th>
-                                    <th>Role</th>
                                     <th>Email</th>
                                     <th>Phone number</th>
                                     <th>Status</th>
@@ -35,7 +34,6 @@
                                         <td>{{$agent->fullname}}</td>
                                         <td>{{$agent->sex}}</td>
                                         <td>{{$agent->age}}</td>
-                                        <td>{{$agent->role}}</td>
                                         <td>{{$agent->email}}</td>
                                         <td>{{$agent->phone_number}}</td>
                                         <td>{{$agent->status}}</td>

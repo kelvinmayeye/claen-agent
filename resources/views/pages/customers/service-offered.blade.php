@@ -27,7 +27,7 @@
                                     <tr>
                                         <td>{{$key+1}}</td>
                                         <td>{{$s->service->name}}</td>
-                                        <td>{{$s->description}}</td>
+                                        <td>{{ \Illuminate\Support\Str::words($s->description, 6, '...') }}</td>
                                         <td>{{$s->agent->fullname}}</td>
                                         <td>{{$s->agent->phone_number}}</td>
                                         <td style="text-align: center;">
