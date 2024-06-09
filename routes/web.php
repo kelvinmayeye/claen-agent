@@ -29,6 +29,8 @@ Route::post('register',[UserController::class,'register'])->name('user.register.
 Route::middleware('auth')->group(function(){
     //all users profile
 Route::get('users/profile',[UserController::class,'getProfilePage'])->name('users.profile');
+Route::post('users/update/profile',[UserController::class,'updateProfile'])->name('users.update.profile');
+Route::post('users/change/password',[UserController::class,'changePassword'])->name('change.password');
 
 Route::get('home',[AuthController::class,'home'])->name('home');
 Route::get('services',[ServiceController::class,'index'])->name('services');
@@ -47,6 +49,7 @@ Route::get('services/agent/status/{id}',[AgentController::class,'changeStatus'])
 Route::get('services/agent/delete/{id}',[AgentController::class,'deleteAgentService'])->name('agent.service.delete');
 Route::get('services/agent/bookings',[AgentController::class,'agentServiceBookings'])->name('agent.service.bookings');
 Route::post('services/agent/update',[AgentController::class,'saveAgentServiceUpdate'])->name('agent.service.update');
+Route::get('agent/view/customer/booking/{id}',[AgentController::class,'viewCustomerBooking'])->name('agent.view.customer.booking');
 
 //admin and agents
 Route::get('all/agents',[AdminController::class,'getAgents'])->name('all.agents');

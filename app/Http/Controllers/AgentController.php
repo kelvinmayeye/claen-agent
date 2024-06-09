@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AgentService;
+use App\Models\BookedService;
 use App\Models\Bookings;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -115,7 +116,28 @@ class AgentController extends Controller
 
     public function agentServiceBookings(){
         $bookings = Bookings::list()->where('b.agent_id',Auth::id())->get();
+        if($bookings->isNotEmpty()){
+            foreach ($bookings as $booking){
+                if (now()->format('Y-m-d') > $booking->date && $booking->status === 'open'){
+                    Bookings::where('id',$booking->id)->update(['status' => 'expired']);
+                    //if booking is expired all booked services remains pending
+                }
+            }
+        }
+        $bookings = Bookings::list()->where('b.agent_id',Auth::id())->get();
         return view('pages.agents.agents-bookings',compact('bookings'));
     }
 
+    public function viewCustomerBooking($id)
+    {
+        $customerBooking = Bookings::list()->where('b.id', $id)->first();
+        if (!$customerBooking) {
+            Alert::toast('Service updated successful','error');
+            return redirect()->back();
+        }
+        $bookedServices = BookedService::list()->where('b.id', $id)->get();
+        $customerBooking->service = $bookedServices->isNotEmpty() ? $bookedServices : [];
+//        return $customerBooking;
+        return view('pages.agents.agent-view-customer-booking', compact('customerBooking'));
+    }
 }

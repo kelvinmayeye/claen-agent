@@ -6,7 +6,11 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="text-primary">My Bookings</h3>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h3 class="text-primary">My Bookings</h3></div>
+                            <div><a href="" class="btn btn-primary btn-sm">Create Booking</a></div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="">

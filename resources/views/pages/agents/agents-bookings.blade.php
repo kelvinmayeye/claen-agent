@@ -59,7 +59,7 @@
                                                 </button>
                                                 <div class="dropdown-menu">
                                                     <a class="dropdown-item"
-                                                       href="{{route('agent.service.details',$b->id)}}"><i
+                                                       href="{{route('agent.view.customer.booking',$b->id)}}"><i
                                                             class="fa fa-eye"></i> View </a>
                                                     <a class="dropdown-item"
                                                        href="{{route('agent.service.change.status',$b->id)}}"><i
