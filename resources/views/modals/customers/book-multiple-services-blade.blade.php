@@ -45,7 +45,8 @@
                     <div class="row">
                         <div class="d-flex justify-content-between py-3">
                             <div>Services Select</div>
-                            <div><span>Select Agent: <select type="text" class="form-control" placeholder="select agent">
+                            <div><span>Select Agent:
+                                    <select type="text" class="form-control" onchange="getAgentServices(this)">
                                         <option value="" selected disabled>-- Selected Agent</option>
                                         @foreach($agents as $ag)
                                             <option value="{{$ag->id}}">{{$ag->first_name}}</option>
@@ -58,23 +59,19 @@
                                     <div class="card mb-3 border border-primary">
                                         <div class="card-body p-0">
                                             <div class="scroll-area-sm">
-                                                <div class="list-group list-group-flush">
-                                                    @foreach($offeredService as $ofserv)
-                                                        <li class="list-group-item">
-                                                            <div class="d-flex align-items-center">
-                                                                <div class="form-check form-check-lg me-3 custom-checkbox-success">
-                                                                    <input class="form-check-input" type="checkbox" id="exampleCustomCheckbox12">
-                                                                    <label class="form-check-label" for="exampleCustomCheckbox12"></label>
-                                                                </div>
-                                                                <div>
-                                                                    <div class="fw-bold">{{$ofserv->service_name}}
-{{--                                                                        <span class="badge bg-danger ms-2">Rejected</span>--}}
-                                                                    </div>
-                                                                    <div class="text-muted"><i>{{$ofserv->agent_name}}</i></div>
+                                                <div class="list-group list-group-flush service-holder">
+                                                    <li class="list-group-item">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="form-check form-check-lg me-3 custom-checkbox-success">
+
+                                                                <label class="form-check-label" for="exampleCustomCheckbox12"></label>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bold">No Agent Select
                                                                 </div>
                                                             </div>
-                                                        </li>
-                                                    @endforeach
+                                                        </div>
+                                                    </li>
                                                 </div>
                                             </div>
                                         </div>
@@ -94,3 +91,38 @@
         </div>
     </div>
 </div>
+
+<script>
+    function getAgentServices(obj){
+        let agent_id = $(obj).val() || '';
+
+        $.post(`{{ route('ajax.get.agent.service') }}`, {
+            _token: '{{ csrf_token() }}',
+            agent_id: agent_id
+        }, (result) => {
+            if (result.status === 'success'){
+                let service = result.data;
+                $('.service-holder').empty();
+                $.each(service,function (i,val){
+                    let row = `<li class="list-group-item">
+                                    <div class="d-flex align-items-center">
+                                      <div class="form-check form-check-lg me-3 custom-checkbox-success">
+                                        <input class="form-check-input" type="checkbox" id="exampleCustomCheckbox12">
+                                           <label class="form-check-label" for="exampleCustomCheckbox12"></label>
+                                      </div>
+                                        <div>
+                                          <div class="fw-bold">${val.service_name}
+                                        </div>
+                                    <div class="text-muted"><i>${val.agent_name}</i></div>
+                                  </div>
+                                 </div>
+                                </li>`;
+                    $('.service-holder').append(row);
+
+                });
+
+            }
+        });
+    }
+</script>
+

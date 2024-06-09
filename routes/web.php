@@ -51,6 +51,7 @@ Route::get('services/agent/delete/{id}',[AgentController::class,'deleteAgentServ
 Route::get('services/agent/bookings',[AgentController::class,'agentServiceBookings'])->name('agent.service.bookings');
 Route::post('services/agent/update',[AgentController::class,'saveAgentServiceUpdate'])->name('agent.service.update');
 Route::get('agent/view/customer/booking/{id}',[AgentController::class,'viewCustomerBooking'])->name('agent.view.customer.booking');
+Route::post('ajax/get/agent/service',[AgentController::class,'ajax_get_agent_service'])->name('ajax.get.agent.service');
 
 //admin and agents
 Route::get('all/agents',[AdminController::class,'getAgents'])->name('all.agents');
