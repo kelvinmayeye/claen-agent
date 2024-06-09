@@ -40,6 +40,7 @@ Route::post('services/store',[ServiceController::class,'store'])->name('services
 Route::get('services/customer',[ServiceController::class,'serviceOffered'])->name('service.offered');
 Route::get('bookings/customer',[BookingController::class,'customerBookings'])->name('customer.bookings');
 Route::post('customer/add/booking',[BookingController::class,'addBooking'])->name('add.booking');
+Route::post('customer/add/multiple/booking',[BookingController::class,'addMultipleBooking'])->name('add.multiple.booking');
 
 //agent -serives
 Route::get('services/agent',[AgentController::class,'getAgentServices'])->name('agent.get.services');

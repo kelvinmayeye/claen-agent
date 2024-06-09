@@ -1,4 +1,32 @@
 @extends('index')
+@section('extra-css')
+    <style>
+        .custom-checkbox-lg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .custom-checkbox-label {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            position: relative;
+            top: -10px; /* Adjust the alignment as needed */
+            left: -10px; /* Adjust the alignment as needed */
+        }
+
+        .custom-checkbox-success .form-check-input {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #198754; /* Bootstrap's success color */
+        }
+
+        .custom-checkbox-success .form-check-input:checked {
+            background-color: #198754; /* Bootstrap's success color for the checked state */
+            border-color: #198754; /* Ensure the border remains the same color when checked */
+        }
+    </style>
+@endsection
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -9,7 +37,7 @@
                         <div class="d-flex justify-content-between">
                             <div>
                                 <h3 class="text-primary">My Bookings</h3></div>
-                            <div><a href="" class="btn btn-primary btn-sm">Create Booking</a></div>
+                            <div><a href="" data-bs-target="#book-multiple-service-modal" data-bs-toggle="modal" class="btn btn-primary btn-sm">Create Booking</a></div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -31,7 +59,7 @@
                                 @foreach($bookings as $key=>$b)
                                     <tr>
                                         <td>{{$key+1}}</td>
-                                        <td>{{$b->service_name}}</td>
+                                        <td>{{$b->bookingServices->count().' services'}}</td>
                                         <td>{{$b->agent_name}}</td>
                                         <td>{{$b->agent_phone}}</td>
                                         <td>{{ \Carbon\Carbon::parse($b->created_at)->diffForHumans() }}</td>
@@ -44,10 +72,14 @@
                                                     <i class="fa fa-list"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item text-primary" href="javascript:void(0)"><i
-                                                            class="fa fa-circle"></i> Change Service </a>
-                                                    <a class="dropdown-item text-danger">
-                                                        <i class="fa fa-bookmark"></i> Cancel</a>
+                                                    <a class="dropdown-item text-primary" href="javascript:void(0)">
+                                                        <i class="fa fa-eye"></i> View </a>
+                                                    @if($b->status == 'open')
+                                                        <a class="dropdown-item text-primary" href="javascript:void(0)">
+                                                            <i class="fa fa-circle"></i> Change Service </a>
+                                                        <a class="dropdown-item text-danger">
+                                                            <i class="fa fa-bookmark"></i> Cancel</a>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </td>
@@ -61,6 +93,8 @@
             </div>
         </div>
     </div>
+    @include('modals.customers.book-multiple-services-blade')
+
 @endsection
 
 @section('script')

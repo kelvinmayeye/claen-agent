@@ -38,8 +38,8 @@
                                                     <i class="fa fa-list"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item text-primary" href="javascript:void(0)"><i
-                                                            class="fa fa-eye"></i> More details </a>
+{{--                                                    <a class="dropdown-item text-primary" href="javascript:void(0)"><i--}}
+                                                    {{--                                                            class="fa fa-eye"></i> More details </a>--}}
                                                     <a class="dropdown-item text-success" data-service-details="{{$s}}"
                                                        data-bs-target="#book-service-modal" data-bs-toggle="modal">
                                                         <i class="fa fa-bookmark"></i> Book</a>

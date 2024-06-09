@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -50,5 +51,10 @@ class User extends Authenticatable
         $today = date('Y-m-d');
         $diff = date_diff(date_create($dob), date_create($today));
         return $diff->y;
+    }
+
+    public function agentService(): HasMany
+    {
+        return $this->hasMany(AgentService::class,'agent_id');
     }
 }
