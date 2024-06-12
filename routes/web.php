@@ -27,6 +27,7 @@ Route::post('register',[UserController::class,'register'])->name('user.register.
 
 // user cant access this route without login
 Route::middleware('auth')->group(function(){
+Route::get('theme/', function () {return view('theme');})->name('theme');
     //all users profile
 Route::get('users/profile',[UserController::class,'getProfilePage'])->name('users.profile');
 Route::post('users/update/profile',[UserController::class,'updateProfile'])->name('users.update.profile');
