@@ -1,4 +1,4 @@
-@extends('index')
+@extends('theme')
 @section('extra-css')
     <style>
         .custom-checkbox-lg {
@@ -73,12 +73,12 @@
                                                 </button>
                                                 <div class="dropdown-menu">
                                                     <a class="dropdown-item text-primary" href="javascript:void(0)">
-                                                        <i class="fa fa-eye"></i> View </a>
+                                                        <i class="ri ri-eye-line"></i> View </a>
                                                     @if($b->status == 'open')
                                                         <a class="dropdown-item text-primary" href="javascript:void(0)">
-                                                            <i class="fa fa-circle"></i> Change Service </a>
+                                                            <i class="ri ri-guide-line"></i> Change Service </a>
                                                         <a class="dropdown-item text-danger">
-                                                            <i class="fa fa-bookmark"></i> Cancel</a>
+                                                            <i class="ri ri-forbid-line"></i> Cancel</a>
                                                     @endif
                                                 </div>
                                             </div>

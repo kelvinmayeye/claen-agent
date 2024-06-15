@@ -1,4 +1,4 @@
-@extends('index')
+@extends('theme')
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -58,7 +58,7 @@
                                                     <i class="fa fa-list"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="{{route('agent.service.details',$s->id)}}"><i class="fa fa-eye"></i> View </a>
+                                                    <a class="dropdown-item" href="{{route('agent.service.details',$s->id)}}"><i class="ri-eye-line"></i> View </a>
                                                     <a class="dropdown-item" href="{{route('agent.service.change.status',$s->id)}}"><i class="fa fa-toggle-off"></i> Change status</a>
                                                     <a class="dropdown-item" href="{{route('agent.service.delete',$s->id)}}"><i class="fa fa-trash text-danger"></i> Delete</a>
                                                 </div>

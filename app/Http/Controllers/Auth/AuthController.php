@@ -24,7 +24,7 @@ class AuthController extends Controller
             }
         }
 //        return $agentBookings;
-        return view('pages.shared.home', compact('agentBookings'));
+        return view('pages.shared.home2', compact('agentBookings'));
     }
 
     public function logout(Request $request)
