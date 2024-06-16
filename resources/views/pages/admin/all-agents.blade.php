@@ -41,7 +41,7 @@
                                             <div class="btn-group dropright">
                                                 <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
                                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fa fa-list"></i>
+                                                    <i class="fa fa-ellipsis-v"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
                                                     <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-toggle-off"></i> Change status</a>

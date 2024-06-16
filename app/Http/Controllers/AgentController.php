@@ -124,8 +124,8 @@ class AgentController extends Controller
         $bookings = Bookings::list()->where('b.agent_id', Auth::id())->get();
         if ($bookings->isNotEmpty()) {
             foreach ($bookings as $booking) {
-                if (now()->format('Y-m-d') > $booking->date && $booking->status === 'open') {
-                    Bookings::where('id', $booking->id)->update(['status' => 'expired']);
+                if (now()->format('Y-m-d') > $booking->date && in_array($booking->status, ['confirmed', 'pending'])) {
+                    Bookings::where('id', $booking->id)->update(['status' => 'missed']);
                     //if booking is expired all booked services remains pending
                 }
             }

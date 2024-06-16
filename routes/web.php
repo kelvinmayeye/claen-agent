@@ -39,6 +39,8 @@ Route::post('services/store',[ServiceController::class,'store'])->name('services
 //customer s
 Route::get('services/customer',[ServiceController::class,'serviceOffered'])->name('service.offered');
 Route::get('bookings/customer',[BookingController::class,'customerBookings'])->name('customer.bookings');
+Route::get('customer/view/bookings/{id}',[BookingController::class,'customerViewBooking'])->name('customer.view.booking');
+Route::delete('customer/bookings/cancel{id}',[BookingController::class,'customerCancelBookings'])->name('customer.cancel.bookings');
 Route::post('customer/add/booking',[BookingController::class,'addBooking'])->name('add.booking');
 Route::post('customer/add/multiple/booking',[BookingController::class,'addMultipleBooking'])->name('add.multiple.booking');
 

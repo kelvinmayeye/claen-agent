@@ -59,8 +59,58 @@ class BookingController extends Controller
                 $booking->bookingServices = $bookedServices;
             }
         }
+
+        $title = 'Cancel Booking!';
+        $text = "Are you sure you want to cancel?";
+        confirmDelete($title, $text);
 //        return $bookings;
         return view('pages.customers.customer-bookings', compact('bookings','offeredService','agents'));
+    }
+
+    public function customerCancelBookings($id){
+        $booking = Bookings::find($id);
+        if(!$booking) {
+            toast('Booking not found','error');
+            return back();
+        }
+        if($booking->status !== 'pending'){
+            toast('Sorry you cant cancel this booking with this status','error');
+            return back();
+        }
+        try {
+            DB::beginTransaction();
+            $booking->update([
+                'status'=>'cancelled',
+                'canceled_by'=>Auth::user()->id,
+                'canceled_at'=>now()
+            ]);
+            BookedService::where('booking_id',$booking->id)->update([
+                'status'=>'canceled'
+            ]);
+            DB::commit();
+            toast('Booking cancelled successful','success');
+        }catch (\Exception $e){
+            DB::rollBack();
+            toast($e->getMessage(),'error');
+            return back();
+        }
+        return back();
+    }
+
+    public function customerViewBooking($id) {
+        $bookings = Bookings::list()->where('b.id', $id)->get();
+
+        if ($bookings->isEmpty()) {
+            toast('Booking not found', 'error');
+            return back();
+        }
+        foreach ($bookings as $booking) {
+            $booked_services = BookedService::list()->where('bs.booking_id', $booking->id)->get();
+            $booking->booked_services = $booked_services;
+        }
+//        return $booking;
+        toast('Booking Details Loaded successful', 'success');
+        return view('pages.customers.customer-view-booking',compact('booking'));
     }
 
 

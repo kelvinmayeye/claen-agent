@@ -19,7 +19,7 @@ return new class extends Migration
             $table->time('time');
             $table->string('place');
             $table->text('description')->nullable();
-            $table->enum('status',['open','done','expired'])->default('open');
+            $table->enum('status',['pending','confirmed ','completed','cancelled','missed'])->default('pending');
             $table->timestamps();
             $table->softDeletes();
         });

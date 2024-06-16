@@ -36,9 +36,9 @@
                                                     data-bs-html="true"
                                                     data-bs-content='<div class="popover-content">
                                                 <h5>Booked Services</h5>
-                                                <p>{{$b->service_name}}.</p>
+                                                <p>{{$b->service_name??null}}</p>
                                             </div>'>
-                                            Services
+                                            {{$b->booked_services_count}} Service
                                             </button>
                                         </td>
                                         <td>{{$b->place}}</td>
@@ -55,7 +55,7 @@
                                                 <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
                                                         data-bs-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false">
-                                                    <i class="fa fa-list"></i>
+                                                    <i class="fa fa-ellipsis-v"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
                                                     <a class="dropdown-item"

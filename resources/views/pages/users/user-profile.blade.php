@@ -9,7 +9,10 @@
                             @csrf
                             <input type="hidden" name="user_id" value="{{$user->id}}">
                             <div class="row">
-                                <div class="fw-bolder text-dark">Personal information</div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="fw-bolder text-dark">Personal information</div>
+                                    <div class="fw-bolder text-dark">User role <span class="fw-bolder text-danger">{{$user->role}}</span></div>
+                                </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Firstname</label>
                                     <input type="text" class="form-control" value="{{$user->first_name}}" name="first_name">
@@ -51,10 +54,6 @@
                                     <div class="col-md-4">
                                         <label class="form-label">Email</label>
                                         <input type="email" class="form-control" value="{{$user->email}}" name="email">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label class="form-label">Role</label>
-                                        <input type="text" class="form-control bg-primary-subtle" value="{{$user->role}}" readonly>
                                     </div>
                                 </div>
                             </div>

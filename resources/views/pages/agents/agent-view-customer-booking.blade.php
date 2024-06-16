@@ -2,7 +2,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6 mx-auto">
+            <div class="col-8 mx-auto">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div><span>Booked Services</span></div>
+                            <div><span class="fw-bolder fs-4">Booked Services</span></div>
                             <div class="table-responsive border-0">
                                 <table class="table table-sm align-middle p-2 mb-0 table-hover">
                                     <thead class="table-dark">
@@ -59,7 +59,7 @@
                                             <td>{{$s->status}}</td>
                                             <td>12 Nov 2021</td>
                                             <td>
-                                                <button class="btn btn-sm btn-danger btn-rounded">Cancel</button>
+                                                <button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach

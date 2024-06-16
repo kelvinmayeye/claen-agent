@@ -69,16 +69,16 @@
                                                 <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
                                                         data-bs-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false">
-                                                    <i class="fa fa-list"></i>
+                                                    <i class="fa fa-ellipsis-v"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item text-primary" href="javascript:void(0)">
+                                                    <a class="dropdown-item text-primary" href="{{route('customer.view.booking',$b->id)}}">
                                                         <i class="fa fa-eye"></i> View </a>
-                                                    @if($b->status == 'open')
+                                                    @if($b->status == 'pending')
                                                         <a class="dropdown-item text-primary" href="javascript:void(0)">
-                                                            <i class="fa fa-circle"></i> Change Service </a>
-                                                        <a class="dropdown-item text-danger">
-                                                            <i class="fa fa-bookmark"></i> Cancel</a>
+                                                            <i class="fa fa-arrow-alt-circle-left"></i> Change Service </a>
+                                                        <a href="{{route('customer.cancel.bookings',$b->id)}}" class="dropdown-item text-danger" data-confirm-delete="true">
+                                                            <i class="fa fa-times"></i> Cancel</a>
                                                     @endif
                                                 </div>
                                             </div>
