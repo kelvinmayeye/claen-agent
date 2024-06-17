@@ -158,4 +158,18 @@ class AgentController extends Controller
         }
         return response()->json($result);
     }
+
+    public function ajax_get_agent_service_change(Request $request){
+        try {
+            $booking = Bookings::find($request->get('book_number'));
+            $available_services = BookedService::where('booking_id', $booking->id)->pluck('agent_service_id')->toArray();
+
+            if (!$booking) throw new \Exception('booking not found');
+            $agent_service = AgentService::list()->where('ags.agent_id', $booking->agent_id)->whereNotIn('ags.id', $available_services)->get();
+            $result = ['status' => 'success', 'data' => $agent_service];
+        }catch (\Exception $e){
+            $result = ['status' => 'error', 'data' => $e];
+        }
+        return response()->json($result);
+    }
 }

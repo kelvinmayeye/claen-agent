@@ -8,11 +8,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-hidden="true"></button>
             </div>
-            <form action="" method="post">
+            <form action="{{route('add.multiple.booking')}}" method="post">
                 @csrf
                 <div class="modal-body">
-                    <input type="hidden" name="booked_service[agent_service_id]" class="agent-service-id">
-                    <input type="hidden" name="agent_id" class="agent-id">
+                    <input type="hidden" name="agent_id" id="agent-id">
                     <div class="row">
                         <div class="col-md-12">
                             <label>Service name</label>
@@ -47,7 +46,7 @@
                             <div>Services Select</div>
                             <div><span>Select Agent:
                                     <select type="text" class="form-control" onchange="getAgentServices(this)">
-                                        <option value="" selected disabled>-- Selected Agent</option>
+                                        <option value="" selected>-- Selected Agent</option>
                                         @foreach($agents as $ag)
                                             <option value="{{$ag->id}}">{{$ag->first_name}}</option>
                                         @endforeach
@@ -105,9 +104,10 @@
                 $('.service-holder').empty();
                 $.each(service,function (i,val){
                     let row = `<li class="list-group-item">
+                                   <input type="hidden">
                                     <div class="d-flex align-items-center">
                                       <div class="form-check form-check-lg me-3 custom-checkbox-success">
-                                        <input class="form-check-input" type="checkbox" id="exampleCustomCheckbox12">
+                                        <input class="form-check-input" type="checkbox" value="${val.id}" name="bookedservice[${val.id}]">
                                            <label class="form-check-label" for="exampleCustomCheckbox12"></label>
                                       </div>
                                         <div>
@@ -120,6 +120,7 @@
                     $('.service-holder').append(row);
 
                 });
+                $('#agent-id').val('').val(agent_id);
 
             }
         });

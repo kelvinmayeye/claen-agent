@@ -20,7 +20,8 @@ class BookedService extends Model
             ->join('agent_services as as','bs.agent_service_id','=','as.id')
             ->join('users as agents','as.agent_id','=','agents.id')
             ->join('services as s','as.service_id','=','s.id')
-            ->select(['bs.*','s.name as service_name',]);
+            ->select(['bs.*','s.name as service_name'])
+            ->selectRaw('CONCAT(agents.first_name, ", ", agents.last_name) as agent_name');
     }
 
 

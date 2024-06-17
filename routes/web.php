@@ -42,9 +42,11 @@ Route::get('bookings/customer',[BookingController::class,'customerBookings'])->n
 Route::get('customer/view/bookings/{id}',[BookingController::class,'customerViewBooking'])->name('customer.view.booking');
 Route::delete('customer/bookings/cancel{id}',[BookingController::class,'customerCancelBookings'])->name('customer.cancel.bookings');
 Route::post('customer/add/booking',[BookingController::class,'addBooking'])->name('add.booking');
+Route::post('customer/change/booking',[BookingController::class,'changeServiceBooking'])->name('customer.change.booking');
 Route::post('customer/add/multiple/booking',[BookingController::class,'addMultipleBooking'])->name('add.multiple.booking');
+Route::delete('customer/delete/service{id}',[BookingController::class,'customerDeleteBookingService'])->name('customer.delete.service');
 
-//agent -serives
+//agent - services
 Route::get('services/agent',[AgentController::class,'getAgentServices'])->name('agent.get.services');
 Route::get('services/agent/add',[AgentController::class,'storeAgentServices'])->name('agent.add.services');
 Route::get('services/agent/details/{id}',[AgentController::class,'agentServiceDetails'])->name('agent.service.details');
@@ -54,6 +56,7 @@ Route::get('services/agent/bookings',[AgentController::class,'agentServiceBookin
 Route::post('services/agent/update',[AgentController::class,'saveAgentServiceUpdate'])->name('agent.service.update');
 Route::get('agent/view/customer/booking/{id}',[AgentController::class,'viewCustomerBooking'])->name('agent.view.customer.booking');
 Route::post('ajax/get/agent/service',[AgentController::class,'ajax_get_agent_service'])->name('ajax.get.agent.service');
+Route::post('ajax/get/agent/service/change',[AgentController::class,'ajax_get_agent_service_change'])->name('ajax.get.agent.service.change');
 
 //admin and agents
 Route::get('all/agents',[AdminController::class,'getAgents'])->name('all.agents');
