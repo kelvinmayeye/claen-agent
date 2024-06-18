@@ -130,7 +130,7 @@ class AgentController extends Controller
                 }
             }
         }
-        $bookings = Bookings::list()->where('b.agent_id', Auth::id())->get();
+        $bookings = Bookings::list()->where('b.agent_id', Auth::id())->distinct()->get();
         return view('pages.agents.agents-bookings', compact('bookings'));
     }
 

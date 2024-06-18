@@ -15,7 +15,7 @@ class AuthController extends Controller
     public function home() {
         $agentBookings = collect();
         if (auth()->user()->role == 'agent') {
-            $agentBookings = Bookings::list()->where('agents.id', auth()->id())->get();
+            $agentBookings = Bookings::list()->where('agents.id', auth()->id())->distinct()->get();
 
             if ($agentBookings->isNotEmpty()) {
                 foreach ($agentBookings as $booking) {

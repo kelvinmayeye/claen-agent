@@ -57,14 +57,18 @@
                                             <td>{{$no++}}</td>
                                             <td>{{$s->service_name}}</td>
                                             <td>{{$s->status}}</td>
-                                            <td>12 Nov 2021</td>
+                                            <td>&nbsp;</td>
                                             <td>
-                                                <button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button>
+                                                <button class="btn btn-sm btn-success" title="mark as attended"><i class="fa fa-check"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach
                                     </tbody>
                                 </table>
+                                <div class="d-flex justify-content-end pt-3 gap-2">
+                                    <div><a class="btn btn-danger"><i class="fa fa-times-circle"></i></a></div>
+                                    <div><a class="btn btn-success"><i class="fa fa-check"></i></a></div>
+                                </div>
                             </div>
                         </div>
 
