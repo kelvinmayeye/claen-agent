@@ -27,7 +27,7 @@
                             <h4 class="card-title">My Services</h4>
                         </div>
                         <div class="">
-                            <table class="table table-sm">
+                            <table class="table table-sm table-bordered">
                                 <thead class="bg-primary text-white">
                                 <tr>
                                     <th>#</th>
@@ -45,7 +45,7 @@
                                         <td>{{$s->service->name}}</td>
                                         <td>{{ \Illuminate\Support\Str::words($s->description, 6, '...') }}</td>
                                         <td>{{$s->bookings->count()}}</td>
-                                        <td>@if($s->status == 'active')
+                                        <td class="fw-bolder text-center">@if($s->status == 'active')
                                                 <span class="text-success">{{$s->status}}</span>
                                             @else
                                                 <span class="text-danger">{{$s->status}}</span>

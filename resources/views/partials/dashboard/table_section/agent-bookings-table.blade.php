@@ -53,7 +53,7 @@
                                 {{$booking->place}}
                             </td>
                             <td class="font-weight-medium text-center text-dark">{{$booking->booking_status}}</td>
-                            <td class="font-weight-medium text-center text-dark">
+                            <td style="text-align: center;">
                                 <div class="btn-group dropright">
                                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
                                             data-bs-toggle="dropdown" aria-haspopup="true"
@@ -61,8 +61,9 @@
                                         <i class="fa fa-ellipsis-v"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="">
-                                            <i class="fa fa-eye"></i> View </a>
+                                        <a class="dropdown-item"
+                                           href="{{route('agent.view.customer.booking',$booking->id)}}"><i
+                                                class="fa fa-eye"></i> View </a>
                                     </div>
                                 </div>
                             </td>

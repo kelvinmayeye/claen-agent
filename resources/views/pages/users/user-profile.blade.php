@@ -70,17 +70,17 @@
                                 <div class="fw-bolder text-dark">Change Password</div>
                                 <div class="col-md-4">
                                     <label class="form-label">Current Password</label>
-                                    <input type="password" class="form-control" name="current_password">
+                                    <input type="password" class="form-control" name="current_password" required>
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" name="password">
+                                    <input type="password" class="form-control" name="password" required>
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control" name="confirm_password">
+                                    <input type="password" class="form-control" name="confirm_password" required>
                                 </div>
                             </div>
                             <div class="row mt-2">

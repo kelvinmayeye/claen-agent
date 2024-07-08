@@ -8,6 +8,7 @@ use App\Models\Bookings;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class AgentController extends Controller
@@ -172,4 +173,76 @@ class AgentController extends Controller
         }
         return response()->json($result);
     }
+
+    public function ajax_confirm_booking(Request $request)
+    {
+        $booking_id = $request->get('booking_id');
+        try {
+            $booking = Bookings::find($booking_id);
+            if ($booking) {
+                $booking->update([
+                    'status' => 'confirmed'
+                ]);
+                Alert::success('Booking accepted successfully', '');
+                Session::flash('success','Booking accepted successfully');
+                $result = ['status' => 'success', 'msg' => 'Booking accepted successfully'];
+            } else {
+                Session::flash('error','Booking not found');
+                $result = ['status' => 'error', 'msg' => 'Booking not found'];
+            }
+        } catch (\Exception $e) {
+            Session::flash('error','Failed to accept booking');
+            $result = ['status' => 'error', 'msg' => 'Failed to accept booking'];
+        }
+        return response()->json($result);
+    }
+
+    public function ajax_cancel_booking(Request $request)
+    {
+        $booking_id = $request->get('booking_id');
+        try {
+            $booking = Bookings::find($booking_id);
+            if ($booking) {
+                $booking->update([
+                    'status' => 'cancelled'
+                ]);
+                Alert::success('Booking cancelled successfully', '');
+                Session::flash('success','Booking cancelled successfully');
+                $result = ['status' => 'success', 'msg' => 'Booking cancelled successfully'];
+            } else {
+                Session::flash('error','Booking not found');
+                $result = ['status' => 'error', 'msg' => 'Booking not found'];
+            }
+        } catch (\Exception $e) {
+            Session::flash('error','Failed to cancelled booking');
+            $result = ['status' => 'error', 'msg' => 'Failed to cancelled booking'];
+        }
+        return response()->json($result);
+    }
+
+    public function mark_as_attended(Request $request){
+        $booking_service_id = $request->get('booked_service_id');
+        try {
+            $booked_service = BookedService::find($booking_service_id);
+            if ($booked_service) {
+                $booked_service->update([
+                    'status' => 'attended',
+                    'attended_by'=>Auth::id()
+                ]);
+                Alert::success('Service Marked as attended', '');
+                Session::flash('success','Service Marked as attended');
+                $result = ['status' => 'success', 'msg' => 'Service Marked as attended'];
+            } else {
+                Alert::error('Service not found', '');
+                Session::flash('error','Service not found');
+                $result = ['status' => 'error', 'msg' => 'Service not found'];
+            }
+        } catch (\Exception $e) {
+            Alert::success('Failed to Marked as attended', '');
+            Session::flash('error','Failed to Marked as attended');
+            $result = ['status' => 'error', 'msg' => 'Failed to Marked as attended'];
+        }
+        return response()->json($result);
+    }
+
 }

@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {return view('welcome');});
-//Route::get('/', function () {return view('auth.login');})->name('login');
+Route::get('login', function () {return view('auth.login');})->name('login');
 Route::get('register',[UserController::class,'getRegisterPage'])->name('user.register');
 Route::get('user/logout',[AuthController::class,'logout'])->name('logout');
 Route::post('user/login',[AuthController::class,'login'])->name('user.login');
@@ -58,6 +58,13 @@ Route::post('services/agent/update',[AgentController::class,'saveAgentServiceUpd
 Route::get('agent/view/customer/booking/{id}',[AgentController::class,'viewCustomerBooking'])->name('agent.view.customer.booking');
 Route::post('ajax/get/agent/service',[AgentController::class,'ajax_get_agent_service'])->name('ajax.get.agent.service');
 Route::post('ajax/get/agent/service/change',[AgentController::class,'ajax_get_agent_service_change'])->name('ajax.get.agent.service.change');
+
+//agent booking actions
+Route::get('ajax/confirm/booking',[AgentController::class,'ajax_confirm_booking'])->name('ajax.confirm.booking');
+Route::get('ajax/cancel/booking',[AgentController::class,'ajax_cancel_booking'])->name('ajax.cancel.booking');
+Route::get('ajax/markas/attended',[AgentController::class,'mark_as_attended'])->name('ajax.markas.attended');
+
+
 
 //admin and agents
 Route::get('all/agents',[AdminController::class,'getAgents'])->name('all.agents');

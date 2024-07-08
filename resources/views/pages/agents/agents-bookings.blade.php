@@ -9,7 +9,7 @@
                             <h4 class="card-title">Bookings From Customer</h4>
                         </div>
                         <div class="">
-                            <table class="table table-sm">
+                            <table class="table table-sm table-bordered">
                                 <thead class="bg-primary text-white">
                                 <tr>
                                     <th>#</th>
@@ -43,7 +43,7 @@
                                         </td>
                                         <td>{{$b->place}}</td>
                                         <td>{{$b->date.'-'.$b->time}}</td>
-                                        <td>{{$b->created_at}}</td>
+                                        <td>{{ \Carbon\Carbon::parse($b->created_at)->diffForHumans() }}</td>
                                         <td>@if($b->booking_status == 'done')
                                                 <span class="text-success">{{$b->status}}</span>
                                             @else
@@ -61,12 +61,6 @@
                                                     <a class="dropdown-item"
                                                        href="{{route('agent.view.customer.booking',$b->id)}}"><i
                                                             class="fa fa-eye"></i> View </a>
-                                                    <a class="dropdown-item"
-                                                       href="{{route('agent.service.change.status',$b->id)}}"><i
-                                                            class="fa fa-toggle-off"></i> Change status</a>
-                                                    <a class="dropdown-item"
-                                                       href="{{route('agent.service.delete',$b->id)}}"><i
-                                                            class="fa fa-trash text-danger"></i> Delete</a>
                                                 </div>
                                             </div>
                                         </td>

@@ -47,7 +47,7 @@
                                 <thead class="bg-primary text-light">
                                 <tr>
                                     <th>#</th>
-                                    <th>Service Name</th>
+                                    <th>Service</th>
                                     <th>Agent</th>
                                     <th>Phone number</th>
                                     <th>Booked At</th>
