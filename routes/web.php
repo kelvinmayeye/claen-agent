@@ -69,4 +69,5 @@ Route::get('ajax/markas/attended',[AgentController::class,'mark_as_attended'])->
 //admin and agents
 Route::get('all/agents',[AdminController::class,'getAgents'])->name('all.agents');
 Route::get('all/customers',[AdminController::class,'getCustomers'])->name('all.customers');
+Route::get('change/user/status/{id}',[AdminController::class,'changeUserStatus'])->name('change.user.status');
 });

@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="">
-                            <table class="table table-sm">
+                            <table class="table table-sm table-bordered">
                                 <thead class="bg-primary text-white">
                                 <tr>
                                     <th>#</th>
@@ -32,13 +32,13 @@
                                 @foreach($customers as $key=>$customer)
                                     <tr>
                                         <td>{{$key+1}}</td>
-                                        <td>{{$customer->fullname}}</td>
+                                        <td class="fw-bolder">{{$customer->fullname}}</td>
                                         <td>{{$customer->sex}}</td>
                                         <td>{{$customer->age}}</td>
                                         <td>{{$customer->role}}</td>
                                         <td>{{$customer->email}}</td>
                                         <td>{{$customer->phone_number}}</td>
-                                        <td>{{$customer->status}}</td>
+                                        <td class="text-danger-emphasis text-center">{{$customer->status}}</td>
                                         <td style="text-align: center;">
                                             <div class="btn-group dropright">
                                                 <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
@@ -46,8 +46,7 @@
                                                     <i class="fa fa-ellipsis-v"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-toggle-off"></i> Change status</a>
-                                                    <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-trash text-danger"></i> Delete</a>
+                                                    <a class="dropdown-item" href="{{route('change.user.status',$customer->id)}}"><i class="fa fa-toggle-off"></i> Change status</a>
                                                 </div>
                                             </div>
                                         </td>

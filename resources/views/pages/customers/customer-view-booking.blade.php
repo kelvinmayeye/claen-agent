@@ -37,7 +37,8 @@
                         <div class="d-flex justify-content-between">
                             <div>
                                 <h3 class="text-primary"></h3></div>
-                                                        <div><a href="{{route('customer.bookings')}}" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i> back</a></div>
+                            <div><a href="{{route('customer.bookings')}}" class="btn btn-primary btn-sm"><i
+                                        class="fa fa-arrow-left"></i> back</a></div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -45,7 +46,8 @@
                             <div class="col-md-6">
                                 <div class="vstack gap-1">
                                     <div class="fs-5"><span class="fw-semibold">Booking Number</span> <span
-                                            class="text-info" id="booking_number">{{$booking->id}}</span></div> <!-- booking number is here watch out -->
+                                            class="text-info" id="booking_number">{{$booking->id}}</span></div>
+                                    <!-- booking number is here watch out -->
                                     <div class="fs-5"><span class="fw-semibold">Booked By</span> <span
                                             class="text-info">{{$booking->customer_name}}</span></div>
                                     <div class="fs-5"><span class="fw-semibold">Agent Name</span> <span
@@ -69,16 +71,20 @@
                                     <div class="fs-5"><span class="fw-semibold">Time</span> <span
                                             class="text-info">{{$booking->time}}</span></div>
                                     <div class="fs-5"><span class="fw-semibold">Booked At</span>
-                                        <span class="text-info">{{\Carbon\Carbon::parse($booking->created_at)->format('Y-m-d H:i:s')}}</span></div>
+                                        <span
+                                            class="text-info">{{\Carbon\Carbon::parse($booking->created_at)->format('Y-m-d H:i:s')}}</span>
+                                    </div>
                                     @if($booking->booking_status == 'cancelled')
                                         <div class="fs-5"><span class="fw-semibold">Cancelled At</span> <span
-                                                class="text-info">{{\Carbon\Carbon::parse($booking->canceled_at)->format('Y-m-d H:i:s')}}</span></div>
+                                                class="text-info">{{\Carbon\Carbon::parse($booking->canceled_at)->format('Y-m-d H:i:s')}}</span>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12"><p class="pt-1 fs-4 fw-bold text-center">Booked Service List</p></div>
+                            <div class="col-md-12"><p class="pt-1 fs-4 fw-bold text-center">Booked Service List</p>
+                            </div>
                             <div class="col-md-12">
                                 @php($no=1)
                                 <table class="table table-bordered table-sm table-hover">
@@ -94,23 +100,30 @@
                                             <td>{{$bs->service_name}}</td>
                                             <td>{{$bs->status}}</td>
                                             <td style="text-align: center;">
-                                                <div class="btn-group dropdown-menu-right">
-                                                    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
-                                                            data-bs-toggle="dropdown" aria-haspopup="true"
-                                                            aria-expanded="false">
-                                                        <i class="fa fa-list"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        @if($booking->status == 'pending')
-                                                            <a class="dropdown-item text-primary" data-bs-target="#change-booked-service-modal"
-                                                               data-bs-toggle="modal" data-service="{{$bs->agent_service_id}}" data-service-name="{{$bs->service_name}}"
-                                                            data-agent-name="{{$bs->agent_name}}">
+                                                @if($booking->status == 'pending')
+                                                    <div class="btn-group dropdown-menu-right">
+                                                        <button type="button"
+                                                                class="btn btn-secondary btn-sm dropdown-toggle"
+                                                                data-bs-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false">
+                                                            <i class="fa fa-list"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item text-primary"
+                                                               data-bs-target="#change-booked-service-modal"
+                                                               data-bs-toggle="modal"
+                                                               data-service="{{$bs->agent_service_id}}"
+                                                               data-service-name="{{$bs->service_name}}"
+                                                               data-agent-name="{{$bs->agent_name}}">
                                                                 <i class="fa fa-random"></i> Change</a>
 
-                                                            <a class="dropdown-item text-danger" href="{{route('customer.delete.service',$bs->agent_service_id)}}" data-confirm-delete="true"><i class="fa fa-trash"></i> Delete</a>
-                                                        @endif
+                                                            <a class="dropdown-item text-danger"
+                                                               href="{{route('customer.delete.service',$bs->agent_service_id)}}"
+                                                               data-confirm-delete="true"><i class="fa fa-trash"></i>
+                                                                Delete</a>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach
@@ -137,27 +150,27 @@
             // paste to the modal
             $('#agent_name').html(agent_name);
             $('#service_name').html(selected_service_name);
-           let book_number = $('#booking_number').text() || '';
-           console.log(selected_service);
+            let book_number = $('#booking_number').text() || '';
+            console.log(selected_service);
 
-           // for ajax
-           $('#booking_id_update').val('').val(book_number || null);
-           $('#service_id_update').val('').val(selected_service || null);
-            getAgentServices(book_number,selected_service);
+            // for ajax
+            $('#booking_id_update').val('').val(book_number || null);
+            $('#service_id_update').val('').val(selected_service || null);
+            getAgentServices(book_number, selected_service);
         })
 
-        function getAgentServices(book_number,selected_service){
+        function getAgentServices(book_number, selected_service) {
 
             $.post(`{{ route('ajax.get.agent.service.change') }}`, {
                 _token: '{{ csrf_token() }}',
                 book_number: book_number,
                 selected_service: selected_service
             }, (result) => {
-                if (result.status === 'success'){
+                if (result.status === 'success') {
                     let service = result.data;
                     $('.service-holder').empty();
-                    if(result.data.length > 0){
-                        $.each(service,function (i,val){
+                    if (result.data.length > 0) {
+                        $.each(service, function (i, val) {
                             let row = `<li class="list-group-item">
                                     <div class="d-flex align-items-center">
                                       <div class="form-check form-check-lg me-3 custom-checkbox-success">
@@ -175,7 +188,7 @@
                             $('.service-holder').append(row);
 
                         });
-                    }else{
+                    } else {
                         let row = `
                         <li class="list-group-item">
                             <div class="d-flex align-items-center">

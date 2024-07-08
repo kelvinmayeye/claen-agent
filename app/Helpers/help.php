@@ -28,3 +28,11 @@ function pendingBookingCount(){
 function confirmedBookingCount(){
     return Bookings::where('status','confirmed')->count();
 }
+
+function totalBookingPerService($serviceId){
+    return \App\Models\BookedService::list()->where('s.id',$serviceId)->get()->count();
+}
+
+function totalAgentPerService($serviceId){
+        return \App\Models\AgentService::where('service_id',$serviceId)->count();
+}

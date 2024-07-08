@@ -44,8 +44,7 @@
                                                     <i class="fa fa-ellipsis-v"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-toggle-off"></i> Change status</a>
-                                                    <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-trash text-danger"></i> Delete</a>
+                                                    <a class="dropdown-item" href="{{route('change.user.status',$agent->id)}}"><i class="fa fa-toggle-off"></i> Change status</a>
                                                 </div>
                                             </div>
                                         </td>

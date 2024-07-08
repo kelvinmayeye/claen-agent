@@ -11,14 +11,14 @@
                             <a class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#success-header-modal">Add Service</a>
                         </div>
                         <div class="table-responsive">
-                            <table class="table table-sm">
+                            <table class="table table-sm table-bordered">
                                 <thead class="bg-primary text-white">
                                 <tr>
                                     <th>#</th>
                                     <th>Service Name</th>
                                     <th>Description</th>
-                                    <th>Total Agents</th>
-                                    <th>Total Bookings</th>
+                                    <th style="width: 10%">Total Agents</th>
+                                    <th style="width: 12%">Total Bookings</th>
                                     <th>Status</th>
                                 </tr>
                                 </thead>
@@ -26,11 +26,11 @@
                                 @foreach($services as $key=>$s)
                                     <tr>
                                         <td>{{$key+1}}</td>
-                                        <td>{{$s->name}}</td>
+                                        <td class="fw-bolder">{{$s->name}}</td>
                                         <td>{{ \Illuminate\Support\Str::words($s->description, 6, '...') }}</td>
-                                        <td>{{''}}</td>
-                                        <td>{{''}}</td>
-                                        <td>Status</td>
+                                        <td class="text-center">{{totalAgentPerService($s->id)}}</td>
+                                        <td class="text-center">{{totalBookingPerService($s->id)}}</td>
+                                        <td class="text-center fw-bolder text-danger-emphasis">{{$s->status}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

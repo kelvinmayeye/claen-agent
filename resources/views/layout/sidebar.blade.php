@@ -25,12 +25,6 @@
                             <i class="fa fa-box-open">
                             </i><span class="hide-menu">My Bookings </span></a>
                     </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="javascript:void(0)" aria-expanded="false">
-                            <i class="fa fa-clock">
-                            </i><span class="hide-menu">History </span></a>
-                    </li>
                 @endif
 
                 @if(auth()->user()->role == 'agent')
