@@ -120,7 +120,7 @@
                     <a class="btn btn-link" href="">Engine Servicing</a>
                     <a class="btn btn-link" href="">Tires Replacement</a>
                     <a class="btn btn-link" href="">Oil Changing</a>
-                    <a class="btn btn-link" href="">Vacuam Cleaning</a>
+                    <a class="btn btn-link" href="">Vacuum Cleaning</a>
                 </div>
                 {{-- <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>
