@@ -42,7 +42,7 @@
         </div>
     </div>
     <!-- Spinner End -->
-
+    @include('sweetalert::alert')
 
     <!-- Topbar Start -->
     @include('frontend.layouts.topbar')

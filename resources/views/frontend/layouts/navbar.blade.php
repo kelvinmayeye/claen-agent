@@ -9,13 +9,15 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="" class="nav-item nav-link active">Home</a>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Username / Account</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
                 <div class="dropdown-menu fade-up m-0">
-                    <a href="" class="dropdown-item">My Dashboard</a>
+                    @auth
+                        <a href="{{ route('home') }}" class="dropdown-item">My Dashboard</a>
+                    @endauth
                     <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Login/Logout</button>
                 </div>
             </div>
         </div>
-        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Request Service<i class="fa fa-arrow-right ms-3"></i></a>
+{{--        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Request Service<i class="fa fa-arrow-right ms-3"></i></a>--}}
     </div>
 </nav>
