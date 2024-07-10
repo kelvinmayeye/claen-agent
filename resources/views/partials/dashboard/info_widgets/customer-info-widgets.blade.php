@@ -5,9 +5,9 @@
                 <div class="d-flex align-items-center">
                     <div>
                         <div class="d-inline-flex align-items-center">
-                            <h2 class="text-dark mb-1 font-weight-medium">236</h2>
+                            <h2 class="text-dark mb-1 font-weight-medium">{{myBookings()}}</h2>
                         </div>
-                        <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">All Bookings
+                        <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">My Bookings
                         </h6>
                     </div>
                     <div class="ms-auto mt-md-3 mt-lg-0">
@@ -23,7 +23,7 @@
                 <div class="d-flex align-items-center">
                     <div>
                         <div class="d-inline-flex align-items-center">
-                            <h2 class="text-dark mb-1 font-weight-medium">422</h2>
+                            <h2 class="text-dark mb-1 font-weight-medium">{{pendingBooking()}}</h2>
                         </div>
                         <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Pending Bookings
                         </h6>
@@ -40,8 +40,8 @@
             <div class="card-body">
                 <div class="d-flex align-items-center">
                     <div>
-                        <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><sup
-                                class="set-doller"></sup>40</h2>
+                        <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium">
+                            <sup class="set-doller"></sup>{{doneBookings()}}</h2>
                         <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Done Bookings
                         </h6>
                     </div>
@@ -57,7 +57,7 @@
             <div class="card-body">
                 <div class="d-flex align-items-center">
                     <div>
-                        <h2 class="text-dark mb-1 font-weight-medium">100</h2>
+                        <h2 class="text-dark mb-1 font-weight-medium">{{myReviews()}}</h2>
                         <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Reviews</h6>
                     </div>
                     <div class="ms-auto mt-md-3 mt-lg-0">

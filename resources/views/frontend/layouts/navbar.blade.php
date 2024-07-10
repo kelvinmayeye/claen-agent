@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
     <a href="" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-        <h2 class="m-0 text-primary"><i class="fa fa-car me-3"></i>Cleaning Agent</h2>
+        <h2 class="m-0 text-primary"><i class="fa fa-broom me-3"></i>Online Cleaning Agents</h2>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -14,10 +14,12 @@
                     @auth
                         <a href="{{ route('home') }}" class="dropdown-item">My Dashboard</a>
                     @endauth
-                    <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Login/Logout</button>
+                    @guest
+                        <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Login/Logout</button>
+                    @endguest
                 </div>
             </div>
         </div>
-{{--        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Request Service<i class="fa fa-arrow-right ms-3"></i></a>--}}
+        <a href="{{route('home')}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Request Service<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
 </nav>

@@ -14,7 +14,7 @@
               <input type="email" class="form-control border-0" name="email" placeholder="Enter Email" style="height: 55px;" title="write your username" required>
             </div>
             <div class="col">
-              <input type="password" class="form-control border-0" name="password" placeholder="Enter Password" style="height: 55px;" minlength="8" title="minimum character is 8" required>
+              <input type="password" class="form-control border-0" name="password" placeholder="Enter Password" style="height: 55px;" required>
             </div>
           </div>
       </div>

@@ -2,7 +2,7 @@
 @section('content')
     <div class="page-breadcrumb">
         <div class="row">
-            <div class="col-7 align-self-center">
+            <div class="col-10 align-self-center">
                 <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">{{auth()->user()->fullname}}</h3>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
@@ -11,6 +11,11 @@
                             </li>
                         </ol>
                     </nav>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="d-flex justify-content-end">
+                    <span class="fw-bolder text-danger-emphasis">{{auth()->user()->role}}</span>
                 </div>
             </div>
         </div>
