@@ -3,8 +3,8 @@
         <div class="row gx-5">
             <div class="col-lg-6 py-5">
                 <div class="py-5">
-                    <h1 class="text-white mb-4">Drive worry-free with our breakdown service!</h1>
-                    <p class="text-white mb-0">Our vehicle breakdown service web-app provides a convenient way for customers to request assistance when their vehicle breaks down. Whether you need a tire change, a jump-start, or a tow, our network of experienced and reliable mechanics is here to help.</p>
+                    <h1 class="text-white mb-4">Experience Spotless Cleanliness with Our Cleaning Services!</h1>
+                    <p class="text-white mb-0">Our cleaning service web-app provides a convenient way for customers to book professional cleaning services for their homes and offices. Whether you need regular cleaning, deep cleaning, or specialized services like carpet cleaning, our team of experienced cleaners is here to help.</p>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -12,13 +12,12 @@
                     <h1 class="text-white mb-4">Register Account</h1>
                     <form action="{{ url('register') }}" method="POST">
                         @csrf
-                        <input type="hidden" name="is_mechanic" value="0">
                         <div class="row g-3">
                             <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control border-0" name="name" placeholder="Your Name" style="height: 55px;">
+                                <input type="text" class="form-control border-0" name="name" placeholder="Your Name" style="height: 55px;" required>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <input type="email" class="form-control border-0" name="email" placeholder="Your Email" style="height: 55px;">
+                                <input type="email" class="form-control border-0" name="email" placeholder="Your Email" style="height: 55px;" required>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <input type="password" class="form-control border-0" name="password" placeholder="Enter Password" style="height: 55px;" minlength="8" title="minimum character is 8" required>

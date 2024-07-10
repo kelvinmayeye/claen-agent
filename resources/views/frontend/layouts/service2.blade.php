@@ -8,20 +8,20 @@
             <div class="col-lg-4">
                 <div class="nav w-100 nav-pills me-4">
                     <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active" data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
-                        <i class="fa fa-car-side fa-2x me-3"></i>
-                        <h4 class="m-0">Mechanical repairs</h4>
+                        <i class="fa fa-broom fa-2x me-3"></i>
+                        <h4 class="m-0">Home Cleaning</h4>
                     </button>
                     <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
-                        <i class="fa fa-car fa-2x me-3"></i>
-                        <h4 class="m-0">Electrical repairs</h4>
+                        <i class="fa fa-spray-can fa-2x me-3"></i>
+                        <h4 class="m-0">Office Cleaning</h4>
                     </button>
                     <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
-                        <i class="fa fa-cog fa-2x me-3"></i>
-                        <h4 class="m-0">Tires Replacement</h4>
+                        <i class="fa fa-soap fa-2x me-3"></i>
+                        <h4 class="m-0">Deep Cleaning</h4>
                     </button>
                     <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0" data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
-                        <i class="fa fa-oil-can fa-2x me-3"></i>
-                        <h4 class="m-0">Oil Changing</h4>
+                        <i class="fa fa-bucket fa-2x me-3"></i>
+                        <h4 class="m-0">Carpet Cleaning</h4>
                     </button>
                 </div>
             </div>
@@ -31,17 +31,16 @@
                         <div class="row g-4">
                             <div class="col-md-6" style="min-height: 350px;">
                                 <div class="position-relative h-100">
-                                    <img class="position-absolute img-fluid w-100 h-100" src="{{url(asset('frontend/img/service-1.jpg'))}}"
-                                        style="object-fit: cover;" alt="">
+                                    <img class="position-absolute img-fluid w-100 h-100" src="{{url(asset('frontend/img/bout_123.jpg'))}}"
+                                         style="object-fit: cover;" alt="">
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                {{-- <h3 class="mb-3">15 Years Of Experience In Auto Servicing</h3> --}}
-                                <p class="mb-4">If a vehicle is experiencing mechanical problems, such as a broken belt or a faulty transmission, the mechanic may need to perform repairs or replace the faulty part.</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Quality Servicing</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Expert Workers</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Modern Equipment</p>
-                                <a href="" class="btn btn-primary py-3 px-5 mt-3">Request Now<i class="fa fa-arrow-right ms-3"></i></a>
+                                <p class="mb-4">Our home cleaning services ensure a spotless and comfortable living environment. From dusting to vacuuming, we've got you covered.</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Quality Cleaning</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Expert Cleaners</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Eco-Friendly Products</p>
+                                <a href="" class="btn btn-primary py-3 px-5 mt-3">Book Now<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -49,17 +48,16 @@
                         <div class="row g-4">
                             <div class="col-md-6" style="min-height: 350px;">
                                 <div class="position-relative h-100">
-                                    <img class="position-absolute img-fluid w-100 h-100" src="{{url(asset('frontend/img/service-2.jpg'))}}"
-                                        style="object-fit: cover;" alt="">
+                                    <img class="position-absolute img-fluid w-100 h-100" src="{{url(asset('frontend/img/service-office-cleaning.jpg'))}}"
+                                         style="object-fit: cover;" alt="">
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                {{-- <h3 class="mb-3">15 Years Of Experience In Auto Servicing</h3> --}}
-                                <p class="mb-4">If a vehicle's battery cannot be jump-started or is otherwise not functioning properly, the mechanic may need to replace the battery entirely.</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Quality Servicing</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Expert Workers</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Modern Equipment</p>
-                                <a href="" class="btn btn-primary py-3 px-5 mt-3">Request Now<i class="fa fa-arrow-right ms-3"></i></a>
+                                <p class="mb-4">Keep your office space clean and productive with our professional office cleaning services. We handle everything from desks to restrooms.</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Quality Cleaning</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Expert Cleaners</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Flexible Scheduling</p>
+                                <a href="" class="btn btn-primary py-3 px-5 mt-3">Book Now<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -67,17 +65,16 @@
                         <div class="row g-4">
                             <div class="col-md-6" style="min-height: 350px;">
                                 <div class="position-relative h-100">
-                                    <img class="position-absolute img-fluid w-100 h-100" src="{{url(asset('frontend/img/service-3.jpg'))}}"
-                                        style="object-fit: cover;" alt="">
+                                    <img class="position-absolute img-fluid w-100 h-100" src="{{url(asset('frontend/img/service-deep-cleaning.jpg'))}}"
+                                         style="object-fit: cover;" alt="">
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                {{-- <h3 class="mb-3">15 Years Of Experience In Auto Servicing</h3> --}}
-                                <p class="mb-4">Tire replacement service involves replacing a flat or damaged tire with a spare. If there is no spare, towing may be necessary.</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Quality Servicing</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Expert Workers</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Modern Equipment</p>
-                                <a href="" class="btn btn-primary py-3 px-5 mt-3">Request Now<i class="fa fa-arrow-right ms-3"></i></a>
+                                <p class="mb-4">Our deep cleaning services reach the places regular cleaning misses, ensuring a thorough and detailed clean of your entire space.</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Quality Cleaning</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Expert Cleaners</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Advanced Equipment</p>
+                                <a href="" class="btn btn-primary py-3 px-5 mt-3">Book Now<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -85,17 +82,16 @@
                         <div class="row g-4">
                             <div class="col-md-6" style="min-height: 350px;">
                                 <div class="position-relative h-100">
-                                    <img class="position-absolute img-fluid w-100 h-100" src="{{url(asset('frontend/img/service-4.jpg'))}}"
-                                        style="object-fit: cover;" alt="">
+                                    <img class="position-absolute img-fluid w-100 h-100" src="{{url(asset('frontend/img/service-carpet-cleaning.jpg'))}}"
+                                         style="object-fit: cover;" alt="">
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                {{-- <h3 class="mb-3">15 Years Of Experience In Auto Servicing</h3> --}}
-                                <p class="mb-4">Our oil changing service ensures engine longevity. We drain old oil, replace the filter, and refill with quality oil, improving performance and fuel efficiency.</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Quality Servicing</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Expert Workers</p>
-                                <p><i class="fa fa-check text-success me-3"></i>Modern Equipment</p>
-                                <a href="" class="btn btn-primary py-3 px-5 mt-3">Request Now<i class="fa fa-arrow-right ms-3"></i></a>
+                                <p class="mb-4">Our carpet cleaning services remove dirt, stains, and allergens, leaving your carpets fresh and vibrant.</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Quality Cleaning</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Expert Cleaners</p>
+                                <p><i class="fa fa-check text-success me-3"></i>Modern Techniques</p>
+                                <a href="" class="btn btn-primary py-3 px-5 mt-3">Book Now<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                         </div>
                     </div>
