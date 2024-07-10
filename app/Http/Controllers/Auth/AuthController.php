@@ -14,6 +14,7 @@ class AuthController extends Controller
 {
     public function home() {
         $agentBookings = collect();
+        $customerBookings = collect();
         if (auth()->user()->role == 'agent') {
             $agentBookings = Bookings::list()->where('agents.id', auth()->id())->distinct()->get();
 
@@ -23,8 +24,18 @@ class AuthController extends Controller
                 }
             }
         }
-//        return $agentBookings;
-        return view('pages.shared.home', compact('agentBookings'));
+
+        if (auth()->user()->role == 'customer') {
+            $customerBookings = Bookings::list()->where('customers.id', Auth::id())->distinct()->get();
+
+            if ($customerBookings->isNotEmpty()) {
+                foreach ($customerBookings as $c_booking) {
+                    $c_booking->booked_services = BookedService::list()->where('booking_id', $c_booking->id)->get();
+                }
+            }
+        }
+//        return $customerBookings;
+        return view('pages.shared.home', compact('agentBookings','customerBookings'));
     }
 
     public function logout(Request $request)

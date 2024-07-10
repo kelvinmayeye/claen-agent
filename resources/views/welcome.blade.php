@@ -109,11 +109,11 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <h4 class="text-light mb-4">Services</h4>
-                    <a class="btn btn-link" href="">House Cleaning</a>
-                    <a class="btn btn-link" href="">Office Cleaning</a>
-                    <a class="btn btn-link" href="">Carpet Cleaning</a>
-                    <a class="btn btn-link" href="">Window Cleaning</a>
-                    <a class="btn btn-link" href="">Deep Cleaning</a>
+                    <a class="btn btn-link" href="{{route('home')}}">House Cleaning</a>
+                    <a class="btn btn-link" href="{{route('home')}}">Office Cleaning</a>
+                    <a class="btn btn-link" href="{{route('home')}}">Carpet Cleaning</a>
+                    <a class="btn btn-link" href="{{route('home')}}">Window Cleaning</a>
+                    <a class="btn btn-link" href="{{route('home')}}">Deep Cleaning</a>
                 </div>
 
             </div>

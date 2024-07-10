@@ -46,6 +46,7 @@ Route::post('customer/add/booking',[BookingController::class,'addBooking'])->nam
 Route::post('customer/change/booking',[BookingController::class,'changeServiceBooking'])->name('customer.change.booking');
 Route::post('customer/add/multiple/booking',[BookingController::class,'addMultipleBooking'])->name('add.multiple.booking');
 Route::delete('customer/delete/service{id}',[BookingController::class,'customerDeleteBookingService'])->name('customer.delete.service');
+Route::post('add/review',[ServiceController::class,'add_review'])->name('add.review');
 
 //agent - services
 Route::get('services/agent',[AgentController::class,'getAgentServices'])->name('agent.get.services');

@@ -22,21 +22,25 @@
     </div>
     <div class="container-fluid">
         <!-- info widgets -->
-        @if(auth()->user()->role == 'agent')
-            @include('partials.dashboard.info_widgets.agent-info-widgets')
-        @endif
-        @if(auth()->user()->role == 'customer')
-            @include('partials.dashboard.info_widgets.customer-info-widgets')
-        @endif
-          @if(auth()->user()->role == 'admin')
-              @include('partials.dashboard.info_widgets.admin-info-widgets')
-          @endif
+    @if(auth()->user()->role == 'agent')
+        @include('partials.dashboard.info_widgets.agent-info-widgets')
+    @endif
+    @if(auth()->user()->role == 'customer')
+        @include('partials.dashboard.info_widgets.customer-info-widgets')
+    @endif
+    @if(auth()->user()->role == 'admin')
+        @include('partials.dashboard.info_widgets.admin-info-widgets')
+    @endif
     <!-- Start Top Leader Table -->
         <!-- *************************************************************** -->
         <div class="row">
             @if(auth()->user()->role == 'agent')
                 @include('partials.dashboard.table_section.agent-bookings-table')
             @endif
+            @if(auth()->user()->role == 'customer')
+                @include('partials.dashboard.table_section.customer-booking-table')
+            @endif
         </div>
     </div>
+    @include('modals.customers.add-review')
 @endsection

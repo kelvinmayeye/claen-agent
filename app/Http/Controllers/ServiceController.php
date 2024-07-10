@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\AgentService;
+use App\Models\Review;
 use App\Models\Service;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -36,6 +38,18 @@ class ServiceController extends Controller
     public function agentServices(){
         $services = AgentService::where('agent_id',Auth::id())->get();
         return view('pages.agents.agent-services',compact('services'));
+    }
+
+    public function add_review(Request $request){
+        $agent = User::find($request->get('agent_id'));
+        if ($agent){
+            Review::create([
+                'customer_id'=>Auth::id(),
+                'agent_id'=>$agent->id
+            ]);
+            Alert::success('Review Added', 'Thank you for your review');
+        }
+        return back();
     }
 
 
