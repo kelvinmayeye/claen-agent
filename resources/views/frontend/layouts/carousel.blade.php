@@ -2,34 +2,34 @@
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="w-100" src="{{url(asset('frontend/img/carousel-bg-1.jpg'))}}" alt="Image">
+                <img class="w-100" src="{{url(asset('frontend/img/c_bg-1.jpg'))}}" alt="Image">
                 <div class="carousel-caption d-flex align-items-center">
                     <div class="container">
                         <div class="row align-items-center justify-content-center justify-content-lg-start">
                             <div class="col-10 col-lg-7 text-center text-lg-start">
-                                <h6 class="text-white text-uppercase mb-3 animated slideInDown">// 24/7 Availability //</h6>
-                                <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Our mechanics are always available</h1>
+                                <h6 class="text-white text-uppercase mb-3 animated slideInDown"> 24/7 Availability</h6>
+                                <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Our agents are always available</h1>
                                 {{-- <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i class="fa fa-arrow-right ms-3"></i></a> --}}
                             </div>
                             <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
-                                <img class="img-fluid" src="{{url(asset('frontend/img/carousel-1.png'))}}" alt="">
+                                <img class="img-fluid" src="{{url(asset('frontend/img/pngegg_1.png'))}}" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="w-100" src="{{url(asset('frontend/img/carousel-bg-2.jpg'))}}" alt="Image">
+                <img class="w-100" src="{{url(asset('frontend/img/c_bg_2.jpg'))}}" alt="Image">
                 <div class="carousel-caption d-flex align-items-center">
                     <div class="container">
                         <div class="row align-items-center justify-content-center justify-content-lg-start">
                             <div class="col-10 col-lg-7 text-center text-lg-start">
-                                <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Get Back on the Road Quickly //</h6>
+                                <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Get Quality service //</h6>
                                 <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Request assistance with just a few clicks.</h1>
                                 {{-- <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i class="fa fa-arrow-right ms-3"></i></a> --}}
                             </div>
                             <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
-                                <img class="img-fluid" src="{{url(asset('frontend/img/carousel-2.png'))}}" alt="">
+                                <img class="img-fluid" src="{{url(asset('frontend/img/pngegg.png'))}}" alt="">
                             </div>
                         </div>
                     </div>
