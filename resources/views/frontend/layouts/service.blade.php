@@ -5,8 +5,8 @@
                 <div class="d-flex py-5 px-4">
                     <i class="fa fa-certificate fa-3x text-primary flex-shrink-0"></i>
                     <div class="ps-4">
-                        <h5 class="mb-3">Transparent Pricing</h5>
-                        <p>We provide transparent pricing for all our cleaning services, ensuring you know exactly what you are paying for.</p>
+                        <h5 class="mb-3">Exceptional Quality</h5>
+                        <p>We are committed to delivering exceptional quality in all our cleaning services, ensuring your space is spotless and well-maintained.</p>
                     </div>
                 </div>
             </div>
