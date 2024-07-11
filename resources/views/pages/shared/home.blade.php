@@ -34,6 +34,9 @@
     <!-- Start Top Leader Table -->
         <!-- *************************************************************** -->
         <div class="row">
+            @if(auth()->user()->role == 'admin')
+                @include('partials.dashboard.table_section.admin-service-table')
+            @endif
             @if(auth()->user()->role == 'agent')
                 @include('partials.dashboard.table_section.agent-bookings-table')
             @endif

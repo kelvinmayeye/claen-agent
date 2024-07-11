@@ -49,6 +49,10 @@ function totalBookings(){
     return Bookings::count();
 }
 
+function countAllReviews(){
+    return \App\Models\Review::count();
+}
+
 
 //for customers services
 function myBookings(){

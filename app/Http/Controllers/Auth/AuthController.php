@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\BookedService;
 use App\Models\Bookings;
+use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,6 +16,7 @@ class AuthController extends Controller
     public function home() {
         $agentBookings = collect();
         $customerBookings = collect();
+        $adminServices = collect();
         if (auth()->user()->role == 'agent') {
             $agentBookings = Bookings::list()->where('agents.id', auth()->id())->distinct()->get();
 
@@ -34,8 +36,18 @@ class AuthController extends Controller
                 }
             }
         }
-//        return $customerBookings;
-        return view('pages.shared.home', compact('agentBookings','customerBookings'));
+
+        if (auth()->user()->role == 'admin') {
+            $adminServices = Service::list()->get();
+
+            // if ($adminServices->isNotEmpty()) {
+            //     foreach ($adminServices as $s) {
+            //         $s->booked_services = BookedService::list()->where('agent_id', $s->id)->get();
+            //     }
+            // }
+        }
+    //    return $adminServices;
+        return view('pages.shared.home', compact('agentBookings','customerBookings','adminServices'));
     }
 
     public function logout(Request $request)
