@@ -44,11 +44,21 @@ class ServiceController extends Controller
         $agent = User::find($request->get('agent_id'));
         if ($agent){
             Review::create([
+                'comment'=>$request->get('comment')??null,
                 'customer_id'=>Auth::id(),
                 'agent_id'=>$agent->id
             ]);
             Alert::success('Review Added', 'Thank you for your review');
         }
+        return back();
+    }
+
+    public function view_review(){
+       $reviews = Review::list()->get();
+        if(!empty($reviews)){
+            return view('pages.admin.all-reviews',compact('reviews'));
+        }
+        Alert::error('No Reviews', 'No Reviews yet');
         return back();
     }
 

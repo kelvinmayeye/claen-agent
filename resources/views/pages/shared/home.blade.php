@@ -15,7 +15,7 @@
             </div>
             <div class="col-2">
                 <div class="d-flex justify-content-end">
-                    <span class="fw-bolder text-danger-emphasis">{{auth()->user()->role}}</span>
+                    <span class="fw-bolder text-danger-emphasis">{{ucwords(auth()->user()->role)}}</span>
                 </div>
             </div>
         </div>

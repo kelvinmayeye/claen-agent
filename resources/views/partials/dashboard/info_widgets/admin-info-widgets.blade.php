@@ -54,7 +54,7 @@
     </div>
     <div class="col-sm-6 col-lg-3">
         <div class="card ">
-            <a href="" title="view all reviews">
+            <a href="{{route('view.review')}}" title="view all reviews">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div>
