@@ -143,8 +143,8 @@
                         <div class="col-lg-12 text-center">
                             <button type="submit" class="btn w-100 btn-dark">Register</button>
                         </div>
-                        <div class="col-lg-12 text-center mt-5">
-                            I already have an account <a href="{{url('/')}}" class="text-danger">login</a>
+                        <div class="col-lg-12 text-center my-3">
+                            I already have an account <a href="{{route('login')}}" class="text-danger">login</a>
                         </div>
                     </div>
                 </form>

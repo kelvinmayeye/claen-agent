@@ -58,6 +58,9 @@
                             <div class="col-lg-12 text-center mt-5">
                                 Don't have an account? <a href="{{route('user.register')}}" class="text-danger">Sign Up</a>
                             </div>
+                            <div>
+                                <a href="{{route('welcome')}}" class="btn btn-danger">home</a>
+                            </div>
                         </div>
                     </form>
                 </div>
